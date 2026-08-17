@@ -14,7 +14,7 @@ public interface PatientRepo extends JpaRepository<Patient,Integer> {
 
     @Query("select p.name from Patient p where p.age> :age order by p.name asc")
     List<String> findPatientNamesByAgeGreaterThan(@Param("age") int age);
-
-
+    @Query("select count(p) from Patient p where p.isActive=true")
+    int findActivePatientsCount();
 
 }

@@ -3,9 +3,13 @@ package com.netpoint.clinicapp.controller;
 import com.netpoint.clinicapp.model.Patient;
 import com.netpoint.clinicapp.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/patient")
@@ -19,8 +23,12 @@ public class PatientController {
     }
 
     @GetMapping("{id}")
-    public Patient getPatientById(@PathVariable int id){
-        return patientService.findPatientById(id);
+    public ResponseEntity<Patient> getPatientById(@PathVariable int id){
+        Patient patient =patientService.findPatientById(id);
+        if (patient == null){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        return ResponseEntity.ok(patient);
     }
 
     @GetMapping
@@ -41,4 +49,13 @@ public class PatientController {
     public Patient updatePatient(@RequestBody Patient patient, @PathVariable int id){
         return patientService.updatePatient(id,patient);
     }*/
+
+    @GetMapping("/allActivePatients")
+    public Map<String,Integer> getAllActivePatients(){
+        return patientService.findActivePatientsCount();
+    }
+    @GetMapping("/allPatients")
+    public Map<String,Long> getAllPatients(){
+        return patientService.findAllPatientsCount();
+    }
 }

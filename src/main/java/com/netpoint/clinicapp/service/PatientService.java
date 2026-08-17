@@ -5,7 +5,9 @@ import com.netpoint.clinicapp.repository.PatientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,6 +33,20 @@ public class PatientService {
     public void deletePatient(int id){
         patientRepo.deleteById(id);
     }
+    public Map<String,Integer> findActivePatientsCount(){
+        int allactive= patientRepo.findActivePatientsCount();
+        Map<String,Integer> map = new HashMap<>();
+        map.put("Active Patients",allactive);
+        return map;
+    }
+    public Map<String,Long> findAllPatientsCount(){
+        long allpatients= patientRepo.count();
+        Map<String,Long> map = new HashMap<>();
+        map.put("All Patients",allpatients);
+        return map;
+    }
+
+
     /*public Patient updatePatient(int id,Patient patient){
         return patientRepo.updatePatient(id,patient);
     }*/
