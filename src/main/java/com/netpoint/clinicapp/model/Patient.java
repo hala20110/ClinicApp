@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Table(name="patients")
 public class Patient {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     public int id;
     @Column(nullable = false)
     public String name;
@@ -35,6 +35,9 @@ public class Patient {
     @UpdateTimestamp
     public LocalDateTime updatedAt;
     public boolean isActive;
+    @OneToOne
+    @JoinColumn(name="user_id", nullable = false)
+    public User user;
 
 
 }
