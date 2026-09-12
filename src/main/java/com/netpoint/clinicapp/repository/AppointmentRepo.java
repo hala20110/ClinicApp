@@ -16,5 +16,5 @@ public interface AppointmentRepo extends JpaRepository<Appointment, Long> {
     Optional<List<Appointment>> findByPatientId(int patientId);
     Optional<List<Appointment>> findByDoctorId(Long doctorId);
     List<Appointment> findByDoctorIdAndAppointmentDate(Long doctorId, LocalDate appointmentDate);
-
+    List<Appointment> findByAppointmentDateGreaterThanEqualOrderByAppointmentDateAscAppointmentTimeAsc(LocalDate date);
 }

@@ -2,6 +2,8 @@ package com.netpoint.clinicapp.controller;
 
 import com.netpoint.clinicapp.DTO.AppointmentRequestDTO;
 import com.netpoint.clinicapp.DTO.AppointmentResponseDTO;
+import com.netpoint.clinicapp.DTO.AppointmentStatusUpdateDTO;
+import com.netpoint.clinicapp.DTO.AppointmentUpdateDTO;
 import com.netpoint.clinicapp.model.Appointment;
 import com.netpoint.clinicapp.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +38,23 @@ public class AppointmentController {
     public ResponseEntity<List<LocalTime>> getAvailableSlots(@RequestParam Long doctorId, @RequestParam @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate date) {
         List<LocalTime> availableSlots = appointmentService.getAvailableSlots(doctorId,date);
         return ResponseEntity.ok(availableSlots);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<AppointmentResponseDTO> updateAppointment(@PathVariable Long id, @RequestBody AppointmentUpdateDTO updateDTO) {
+        return ResponseEntity.ok(appointmentService.updateAppointment(id, updateDTO));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAppointment(@PathVariable Long id) {
+        appointmentService.deleteAppointment(id);
+        return ResponseEntity.noContent().build();
+    }
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<AppointmentResponseDTO> updateAppointmentStatus(@PathVariable Long id, @RequestBody AppointmentStatusUpdateDTO statusUpdateDTO) {
+        return ResponseEntity.ok(appointmentService.updateAppointmentStatus(id, statusUpdateDTO));
+    }
+    @GetMapping("/upcoming")
+    public ResponseEntity<List<AppointmentResponseDTO>> getUpcomingAppointments() {
+        return ResponseEntity.ok(appointmentService.getUpcomingAppointments());
     }
 }

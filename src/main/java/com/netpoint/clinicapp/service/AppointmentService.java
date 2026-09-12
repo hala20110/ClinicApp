@@ -2,6 +2,8 @@ package com.netpoint.clinicapp.service;
 
 import com.netpoint.clinicapp.DTO.AppointmentRequestDTO;
 import com.netpoint.clinicapp.DTO.AppointmentResponseDTO;
+import com.netpoint.clinicapp.DTO.AppointmentStatusUpdateDTO;
+import com.netpoint.clinicapp.DTO.AppointmentUpdateDTO;
 import com.netpoint.clinicapp.Enum.AppointmentStatus;
 import com.netpoint.clinicapp.Mapper.AppointmentMapper;
 import com.netpoint.clinicapp.model.Appointment;
@@ -114,4 +116,50 @@ public class AppointmentService {
         return allSlots.stream().filter(slot->!bookedSlots.contains(slot)).toList();
 
     }
+
+    public AppointmentResponseDTO updateAppointment(Long id, AppointmentUpdateDTO updateDTO){
+        Appointment existingAppointment=repo.findById(id).orElseThrow(() -> new RuntimeException("Appointment Not Found"));
+        LocalDate targetDate= updateDTO.getAppointmentDate()!=null
+                ? updateDTO.getAppointmentDate()
+                : existingAppointment.getAppointmentDate();
+        LocalDateTime targetTime=updateDTO.getAppointmentTime()!=null
+                ? updateDTO.getAppointmentTime()
+                : existingAppointment.getAppointmentTime();
+
+        boolean ifTimeOrDateChanged=!targetDate.equals(existingAppointment.getAppointmentDate())
+                || !targetTime.equals(existingAppointment.getAppointmentTime());
+        if(ifTimeOrDateChanged) {
+            boolean isSlotTaken=repo.existsByDoctorIdAndAppointmentTimeAndAppointmentDate(existingAppointment.getDoctor().getId(),targetTime,targetDate);
+            if(isSlotTaken) {
+                throw new RuntimeException("Slot is already taken");
+            }
+        }
+        appointmentMapper.updateEntityFromDto(updateDTO,existingAppointment);
+        Appointment savedAppointment=repo.save(existingAppointment);
+        return appointmentMapper.toDTO(savedAppointment);
+    }
+
+    public void deleteAppointment(Long id){
+        if(!repo.existsById(id)) {
+            throw new RuntimeException("Appointment Not Found");
+        }
+        repo.deleteById(id);
+    }
+
+    public AppointmentResponseDTO updateAppointmentStatus(Long id, AppointmentStatusUpdateDTO statusUpdateDTO){
+        Appointment existingAppointment=repo.findById(id).orElseThrow(() -> new RuntimeException("Appointment Not Found"));
+        if(statusUpdateDTO.getStatus()==null) {
+            throw new RuntimeException("Status cannot be null");
+        }
+        existingAppointment.setStatus(statusUpdateDTO.getStatus());
+        Appointment savedAppointment=repo.save(existingAppointment);
+        return appointmentMapper.toDTO(savedAppointment);
+    }
+
+    public List<AppointmentResponseDTO> getUpcomingAppointments(){
+        LocalDate today=LocalDate.now();
+        List<Appointment> upcomingAppointments=repo.findByAppointmentDateGreaterThanEqualOrderByAppointmentDateAscAppointmentTimeAsc(today);
+        return upcomingAppointments.stream().map(appointmentMapper::toDTO).toList();
+    }
+
 }
