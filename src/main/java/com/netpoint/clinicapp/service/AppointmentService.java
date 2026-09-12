@@ -162,4 +162,8 @@ public class AppointmentService {
         return upcomingAppointments.stream().map(appointmentMapper::toDTO).toList();
     }
 
+    public List<AppointmentResponseDTO> findAppointmentsForToday(){
+        LocalDate today=LocalDate.now();
+        return repo.findByAppointmentDate(today).stream().map(appointmentMapper::toDTO).toList();
+    }
 }

@@ -57,4 +57,8 @@ public class AppointmentController {
     public ResponseEntity<List<AppointmentResponseDTO>> getUpcomingAppointments() {
         return ResponseEntity.ok(appointmentService.getUpcomingAppointments());
     }
+    @GetMapping("/today")
+    public ResponseEntity<List<AppointmentResponseDTO>> getTodayAppointments() {
+        return  ResponseEntity.ok(appointmentService.findAppointmentsForToday());
+    }
 }
