@@ -209,3 +209,225 @@
 2026-09-13T04:46:28.540+03:00  INFO 20452 --- [clinicapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-09-13T04:46:28.543+03:00  INFO 20452 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-09-13T04:46:28.545+03:00  INFO 20452 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-13T06:11:19.895+03:00  INFO 18316 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Starting ClinicappApplication using Java 21.0.5 with PID 18316 (D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp\target\classes started by ADMIN in D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp)
+2026-09-13T06:11:19.899+03:00  INFO 18316 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-13T06:11:20.370+03:00  INFO 18316 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-13T06:11:20.418+03:00  INFO 18316 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 7 JPA repository interfaces.
+2026-09-13T06:11:20.717+03:00  INFO 18316 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-09-13T06:11:20.726+03:00  INFO 18316 --- [clinicapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T06:11:20.727+03:00  INFO 18316 --- [clinicapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-13T06:11:20.761+03:00  INFO 18316 --- [clinicapp] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 817 ms
+2026-09-13T06:11:20.892+03:00  INFO 18316 --- [clinicapp] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-13T06:11:20.922+03:00  INFO 18316 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-13T06:11:21.188+03:00  INFO 18316 --- [clinicapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-13T06:11:21.206+03:00  INFO 18316 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-13T06:11:21.328+03:00  INFO 18316 --- [clinicapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@51508029
+2026-09-13T06:11:21.330+03:00  INFO 18316 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-13T06:11:21.383+03:00  INFO 18316 --- [clinicapp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ClinicApp]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: ClinicApp/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-13T06:11:22.122+03:00  INFO 18316 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-13T06:11:22.198+03:00  INFO 18316 --- [clinicapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T06:11:22.251+03:00  INFO 18316 --- [clinicapp] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-13T06:11:23.030+03:00  WARN 18316 --- [clinicapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-13T06:11:23.227+03:00  WARN 18316 --- [clinicapp] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6e772b3c-a0ff-494e-bb60-1e3717fe59f8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-13T06:11:23.266+03:00  INFO 18316 --- [clinicapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-13T06:11:23.387+03:00  INFO 18316 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-09-13T06:11:23.391+03:00  INFO 18316 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Started ClinicappApplication in 3.975 seconds (process running for 4.284)
+2026-09-13T06:12:15.256+03:00  INFO 18316 --- [clinicapp] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-13T06:12:15.257+03:00  INFO 18316 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-13T06:12:15.259+03:00  INFO 18316 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-09-13T06:13:41.311+03:00  INFO 18316 --- [clinicapp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-13T06:13:41.316+03:00  INFO 18316 --- [clinicapp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-13T06:13:41.318+03:00  INFO 18316 --- [clinicapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T06:13:41.320+03:00  INFO 18316 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-13T06:13:41.322+03:00  INFO 18316 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-13T06:36:28.977+03:00  INFO 6336 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Starting ClinicappApplication using Java 21.0.5 with PID 6336 (D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp\target\classes started by ADMIN in D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp)
+2026-09-13T06:36:28.979+03:00  INFO 6336 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-13T06:36:29.576+03:00  INFO 6336 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-13T06:36:29.650+03:00  INFO 6336 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 7 JPA repository interfaces.
+2026-09-13T06:36:30.110+03:00  INFO 6336 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-09-13T06:36:30.120+03:00  INFO 6336 --- [clinicapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T06:36:30.120+03:00  INFO 6336 --- [clinicapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-13T06:36:30.166+03:00  INFO 6336 --- [clinicapp] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1154 ms
+2026-09-13T06:36:30.301+03:00  INFO 6336 --- [clinicapp] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-13T06:36:30.341+03:00  INFO 6336 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-13T06:36:30.611+03:00  INFO 6336 --- [clinicapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-13T06:36:30.632+03:00  INFO 6336 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-13T06:36:30.765+03:00  INFO 6336 --- [clinicapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a2f401a
+2026-09-13T06:36:30.767+03:00  INFO 6336 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-13T06:36:30.818+03:00  INFO 6336 --- [clinicapp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ClinicApp]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: ClinicApp/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-13T06:36:31.606+03:00  INFO 6336 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-13T06:36:31.665+03:00  INFO 6336 --- [clinicapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T06:36:31.722+03:00  INFO 6336 --- [clinicapp] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-13T06:36:32.467+03:00  WARN 6336 --- [clinicapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-13T06:36:32.519+03:00  WARN 6336 --- [clinicapp] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 82273dce-d66a-4a8b-877e-309415b3bb75
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-13T06:36:32.525+03:00  INFO 6336 --- [clinicapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-13T06:36:32.801+03:00  INFO 6336 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-09-13T06:36:32.805+03:00  INFO 6336 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Started ClinicappApplication in 4.173 seconds (process running for 4.485)
+2026-09-13T06:37:04.064+03:00  INFO 6336 --- [clinicapp] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-13T06:37:04.065+03:00  INFO 6336 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-13T06:37:04.066+03:00  INFO 6336 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-13T06:40:38.707+03:00  INFO 6336 --- [clinicapp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-13T06:40:38.713+03:00  INFO 6336 --- [clinicapp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-13T06:40:38.716+03:00  INFO 6336 --- [clinicapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T06:40:38.716+03:00  INFO 6336 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-13T06:40:38.719+03:00  INFO 6336 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-13T06:40:41.535+03:00  INFO 18388 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Starting ClinicappApplication using Java 21.0.5 with PID 18388 (D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp\target\classes started by ADMIN in D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp)
+2026-09-13T06:40:41.537+03:00  INFO 18388 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-13T06:40:42.040+03:00  INFO 18388 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-13T06:40:42.102+03:00  INFO 18388 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 7 JPA repository interfaces.
+2026-09-13T06:40:42.466+03:00  INFO 18388 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-09-13T06:40:42.480+03:00  INFO 18388 --- [clinicapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T06:40:42.480+03:00  INFO 18388 --- [clinicapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-13T06:40:42.518+03:00  INFO 18388 --- [clinicapp] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 947 ms
+2026-09-13T06:40:42.634+03:00  INFO 18388 --- [clinicapp] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-13T06:40:42.667+03:00  INFO 18388 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-13T06:40:42.927+03:00  INFO 18388 --- [clinicapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-13T06:40:42.949+03:00  INFO 18388 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-13T06:40:43.059+03:00  INFO 18388 --- [clinicapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@380e33c2
+2026-09-13T06:40:43.061+03:00  INFO 18388 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-13T06:40:43.111+03:00  INFO 18388 --- [clinicapp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ClinicApp]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: ClinicApp/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-13T06:40:43.879+03:00  INFO 18388 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-13T06:40:43.946+03:00  INFO 18388 --- [clinicapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T06:40:44.003+03:00  INFO 18388 --- [clinicapp] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-13T06:40:44.740+03:00  WARN 18388 --- [clinicapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-13T06:40:44.807+03:00  WARN 18388 --- [clinicapp] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5406911c-b1f9-48a8-b55e-0cf964dbeb27
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-13T06:40:44.811+03:00  INFO 18388 --- [clinicapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-13T06:40:45.097+03:00  INFO 18388 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-09-13T06:40:45.101+03:00  INFO 18388 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Started ClinicappApplication in 3.945 seconds (process running for 4.267)
+2026-09-13T06:41:04.018+03:00  INFO 18388 --- [clinicapp] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-13T06:41:04.019+03:00  INFO 18388 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-13T06:41:04.020+03:00  INFO 18388 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-13T06:43:45.618+03:00  INFO 18388 --- [clinicapp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-13T06:43:45.629+03:00  INFO 18388 --- [clinicapp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-13T06:43:45.634+03:00  INFO 18388 --- [clinicapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T06:43:45.636+03:00  INFO 18388 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-13T06:43:45.639+03:00  INFO 18388 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-13T07:48:04.255+03:00  INFO 24104 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Starting ClinicappApplication using Java 21.0.5 with PID 24104 (D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp\target\classes started by ADMIN in D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp)
+2026-09-13T07:48:04.257+03:00  INFO 24104 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-13T07:48:04.692+03:00  INFO 24104 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-13T07:48:04.750+03:00  INFO 24104 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 8 JPA repository interfaces.
+2026-09-13T07:48:05.073+03:00  INFO 24104 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-09-13T07:48:05.083+03:00  INFO 24104 --- [clinicapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T07:48:05.083+03:00  INFO 24104 --- [clinicapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-13T07:48:05.116+03:00  INFO 24104 --- [clinicapp] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 832 ms
+2026-09-13T07:48:05.233+03:00  INFO 24104 --- [clinicapp] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-13T07:48:05.271+03:00  INFO 24104 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-13T07:48:05.545+03:00  INFO 24104 --- [clinicapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-13T07:48:05.566+03:00  INFO 24104 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-13T07:48:05.671+03:00  INFO 24104 --- [clinicapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29188050
+2026-09-13T07:48:05.673+03:00  INFO 24104 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-13T07:48:05.718+03:00  INFO 24104 --- [clinicapp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ClinicApp]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: ClinicApp/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-13T07:48:06.405+03:00  INFO 24104 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-13T07:48:06.481+03:00  INFO 24104 --- [clinicapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T07:48:06.540+03:00  INFO 24104 --- [clinicapp] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-13T07:48:07.221+03:00  WARN 24104 --- [clinicapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-13T07:48:07.266+03:00  INFO 24104 --- [clinicapp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticateProvider
+2026-09-13T07:48:07.267+03:00  WARN 24104 --- [clinicapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-13T07:48:07.505+03:00  INFO 24104 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-09-13T07:48:07.508+03:00  INFO 24104 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Started ClinicappApplication in 3.562 seconds (process running for 3.843)
+2026-09-13T07:50:12.065+03:00  INFO 24104 --- [clinicapp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-13T07:50:12.070+03:00  INFO 24104 --- [clinicapp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-13T07:50:12.073+03:00  INFO 24104 --- [clinicapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T07:50:12.074+03:00  INFO 24104 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-13T07:50:12.076+03:00  INFO 24104 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-13T07:50:14.917+03:00  INFO 11128 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Starting ClinicappApplication using Java 21.0.5 with PID 11128 (D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp\target\classes started by ADMIN in D:\CoursesProjects\Spring Boot Internship Netpoint 2026\clinicapp\clinicapp)
+2026-09-13T07:50:14.919+03:00  INFO 11128 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-13T07:50:15.314+03:00  INFO 11128 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-13T07:50:15.364+03:00  INFO 11128 --- [clinicapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 8 JPA repository interfaces.
+2026-09-13T07:50:15.641+03:00  INFO 11128 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-09-13T07:50:15.651+03:00  INFO 11128 --- [clinicapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T07:50:15.651+03:00  INFO 11128 --- [clinicapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-13T07:50:15.681+03:00  INFO 11128 --- [clinicapp] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 736 ms
+2026-09-13T07:50:15.780+03:00  INFO 11128 --- [clinicapp] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-13T07:50:15.809+03:00  INFO 11128 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-13T07:50:16.037+03:00  INFO 11128 --- [clinicapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-13T07:50:16.055+03:00  INFO 11128 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-13T07:50:16.157+03:00  INFO 11128 --- [clinicapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3bc891f2
+2026-09-13T07:50:16.158+03:00  INFO 11128 --- [clinicapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-13T07:50:16.202+03:00  INFO 11128 --- [clinicapp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ClinicApp]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: ClinicApp/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-13T07:50:16.827+03:00  INFO 11128 --- [clinicapp] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-13T07:50:16.876+03:00  INFO 11128 --- [clinicapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T07:50:16.931+03:00  INFO 11128 --- [clinicapp] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-13T07:50:17.592+03:00  WARN 11128 --- [clinicapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-13T07:50:17.635+03:00  INFO 11128 --- [clinicapp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticateProvider
+2026-09-13T07:50:17.636+03:00  WARN 11128 --- [clinicapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-13T07:50:17.870+03:00  INFO 11128 --- [clinicapp] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-09-13T07:50:17.873+03:00  INFO 11128 --- [clinicapp] [main] c.n.clinicapp.ClinicappApplication       : Started ClinicappApplication in 3.255 seconds (process running for 3.524)
+2026-09-13T07:51:42.433+03:00  INFO 11128 --- [clinicapp] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-13T07:51:42.434+03:00  INFO 11128 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-13T07:51:42.435+03:00  INFO 11128 --- [clinicapp] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-13T07:52:54.368+03:00  INFO 11128 --- [clinicapp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-13T07:52:54.373+03:00  INFO 11128 --- [clinicapp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-13T07:52:54.376+03:00  INFO 11128 --- [clinicapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-13T07:52:54.377+03:00  INFO 11128 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-13T07:52:54.379+03:00  INFO 11128 --- [clinicapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
