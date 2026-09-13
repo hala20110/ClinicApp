@@ -5,6 +5,7 @@ import com.netpoint.clinicapp.DTO.AppointmentResponseDTO;
 import com.netpoint.clinicapp.DTO.AppointmentStatusUpdateDTO;
 import com.netpoint.clinicapp.DTO.AppointmentUpdateDTO;
 import com.netpoint.clinicapp.Enum.AppointmentStatus;
+import com.netpoint.clinicapp.Exceptions.AppointmentConflictException;
 import com.netpoint.clinicapp.Mapper.AppointmentMapper;
 import com.netpoint.clinicapp.model.Appointment;
 import com.netpoint.clinicapp.model.Doctor;
@@ -46,7 +47,7 @@ public class AppointmentService {
                 appointmentRequestDTO.getAppointmentDate()
         );
         if(isExists) {
-            throw new RuntimeException("This Appointment Already Exists");
+            throw new AppointmentConflictException("Appointment Already Exists");
         }
         Patient patient=patientRepo.findById(appointmentRequestDTO.getPatientId())
                 .orElseThrow(() -> new RuntimeException("Patient Not Found"));
