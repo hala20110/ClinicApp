@@ -44,3 +44,100 @@ A robust, enterprise-ready **Clinic Management System** built with Java, Spring 
 | **Caching** | Redis (Spring Data Redis) |
 | **Utilities** | Lombok, SLF4J / Logback |
 | **API Testing** | Postman |
+
+
+---
+
+##  Architecture & Security Flow
+
+```text
+[ Client / Postman ] 
+       │
+       ▼
+[ JWT Filter ] ──(Extract & Validate Token)──► [ Security Context ]
+       │                                               │
+       ▼                                               ▼
+[ Request Matchers / RBAC ] ───────────► [ Controller Layer ]
+ (/schedule/** -> DOCTOR)                             │
+ (/patient/**  -> PATIENT)                             ▼
+                                           [ Service Layer ]
+                                               │        │
+                                      (Cache)  ▼        ▼ (DB)
+                                          [ Redis ]  [ PostgreSQL ]
+```
+
+---
+
+##  Getting Started
+
+### Prerequisites
+* **Java Development Kit (JDK):** 17 or higher
+* **PostgreSQL:** Running locally on port `5432`
+* **Redis:** Running locally on port `6379` (via WSL2, Docker, or native executable)
+* **Maven:** 3.8+
+
+###  Installation & Setup
+
+1. **Clone the Repository:**
+   ```bash
+   git clone [https://github.com/hala20110/ClinicApp.git](https://github.com/hala20110/ClinicApp.git)
+   cd clinicapp
+   ```
+
+2. **Configure Database & Redis (`src/main/resources/application.properties`):**
+   ```properties
+   server.port=8081
+
+   # PostgreSQL Configuration
+   spring.datasource.url=jdbc:postgresql://localhost:5432/ClinicApp
+   spring.datasource.username=postgres
+   spring.datasource.password=your_postgres_password
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+
+   # Redis Configuration
+   spring.data.redis.host=localhost
+   spring.data.redis.port=6379
+
+   # Security JWT Secret
+   jwt.secret=c3VwZXItc2VjcmV0LWtleS1mb3ItY2xpbmljLWFwcC1qd3QtYXV0aC1zZXJ2aWNl
+   ```
+
+3. **Build and Run the Application:**
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+---
+
+##  API Reference
+
+###  Authentication (`/acc`)
+| Method | Endpoint | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/acc/register` | Register a new user (`DOCTOR` / `PATIENT`) | Public |
+| `POST` | `/acc/login` | Authenticate user and receive JWT token | Public |
+
+###  Doctor Schedule (`/schedule`)
+| Method | Endpoint | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/schedule` | Create a new doctor schedule | `DOCTOR` |
+| `GET` | `/schedule` | Retrieve all doctor schedules | `DOCTOR` |
+| `GET` | `/schedule/doctor/{id}` | Get schedule details by schedule ID | `DOCTOR` |
+| `PUT` | `/schedule/{id}` | Update doctor schedule details | `DOCTOR` |
+
+###  Patient Management (`/patient`)
+| Method | Endpoint | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/patient/profile` | Retrieve authenticated patient details | `PATIENT` |
+| `PUT` | `/patient/profile` | Update patient medical record details | `PATIENT` |
+
+---
+
+##  Internship Project Highlights
+
+During this Spring Boot Internship at Netpoint, the following complex engineering challenges were solved:
+* Designed and executed a custom stateless **Spring Security 6** architecture eliminating session management overhead.
+* Resolved PostgreSQL sequence out-of-sync exceptions (`DataIntegrityViolationException`) by creating custom sequence triggers.
+* Implemented optimized caching patterns using **Redis**, ensuring low-latency retrieval for schedule listings and proper invalidation upon mutations.
