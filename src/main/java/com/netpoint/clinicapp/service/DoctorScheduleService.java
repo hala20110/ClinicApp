@@ -6,19 +6,25 @@ import com.netpoint.clinicapp.model.Doctor;
 import com.netpoint.clinicapp.model.DoctorSchedule;
 import com.netpoint.clinicapp.repository.DoctorRepo;
 import com.netpoint.clinicapp.repository.DoctorScheduleRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class DoctorScheduleService {
     @Autowired
     private DoctorScheduleRepo doctorScheduleRepo;
     @Autowired
     private DoctorRepo doctorRepo;
+    @CacheEvict(value={"doctorschedule","schedule"}, allEntries=true)
     public DoctorScheduleResponseDTO addDoctorSchedule(DoctorScheduleRequestDTO requestDTO) {
         Doctor doctor=doctorRepo.findById(requestDTO.getDoctorId()).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Doctor not found with ID: "+requestDTO.getDoctorId()));
         DoctorSchedule schedule=new DoctorSchedule();
@@ -54,7 +60,9 @@ public class DoctorScheduleService {
         }).toList();
     }
 
+    @Cacheable(value="doctorschedule",key="#id")
     public DoctorScheduleResponseDTO getDoctorScheduleById(Long id){
+        log.info("getDoctorScheduleById: {}",id);
         DoctorSchedule schedule=doctorScheduleRepo.findById(id).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Doctor not found with ID: "+id));
         DoctorScheduleResponseDTO dto=new DoctorScheduleResponseDTO();
         dto.setId(schedule.getId());

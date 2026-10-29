@@ -29,7 +29,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
         return http.csrf(csrf->csrf.disable())
-                .authorizeHttpRequests(requests->requests.requestMatchers("/acc/**").permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(requests->requests.requestMatchers("/acc/**").permitAll()
+                        .requestMatchers("/schedule/**").hasRole("DOCTOR")
+                        .requestMatchers("/patient/**").hasRole("PATIENT")
+                        .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .authenticationProvider(authenticateProvider())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

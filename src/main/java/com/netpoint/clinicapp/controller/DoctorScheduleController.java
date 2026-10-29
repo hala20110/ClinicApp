@@ -6,6 +6,7 @@ import com.netpoint.clinicapp.service.DoctorScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +26,8 @@ public class DoctorScheduleController {
         List<DoctorScheduleResponseDTO> schedules=doctorScheduleService.getAllSchedules();
         return ResponseEntity.ok(schedules);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/doctor/{id}")
+    @PreAuthorize("hasAnyRole('DOCTOR')")
     public ResponseEntity<DoctorScheduleResponseDTO> getScheduleById(@PathVariable Long id) {
         DoctorScheduleResponseDTO schedule = doctorScheduleService.getDoctorScheduleById(id);
         return ResponseEntity.ok(schedule);
@@ -38,5 +40,6 @@ public class DoctorScheduleController {
         DoctorScheduleResponseDTO updatedSchedule = doctorScheduleService.updateSchedule(id, requestDTO);
         return ResponseEntity.ok(updatedSchedule);
     }
+
 
 }
